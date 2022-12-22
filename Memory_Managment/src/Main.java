@@ -12,8 +12,6 @@ public class Main {
 		int noOfBlocks=scan.nextInt();
 		ArrayList<Partition> partitions =new ArrayList<Partition>();
 	    ArrayList<Partition> temp =new ArrayList<Partition>(); //temporary array 
-		//ArrayList<Partition> partitions2= new ArrayList <Partition>();
-		//ArrayList<Partition> partitions3= new ArrayList <Partition>();
 		
 		for(int i=0;i<noOfBlocks;i++)
 		{
@@ -32,8 +30,7 @@ public class Main {
 		System.out.println("Enter the number of procceses");
 		int num=scan.nextInt();
 		ArrayList<Process> processList= new ArrayList <Process>();
-		//ArrayList<Process> processList2= new ArrayList <Process>();
-		//ArrayList<Process> processList3= new ArrayList <Process>();
+		
 		for(int i=0;i<num;i++)
 		{
 			System.out.println("Enter process " + (i+1) + "'s name: ");
@@ -46,8 +43,7 @@ public class Main {
 			Process p3=new Process(name,size);
 			
 			processList.add(p);
-			//processList2.add(p2);
-			//processList3.add(p3);
+	
 			
 		}
 		  Partition.counter=0;
@@ -64,8 +60,7 @@ public class Main {
 			}
 		
 		ArrayList<Process> unAdded= new ArrayList <Process>();
-	//	ArrayList<Process> unAdded2= new ArrayList <Process>();
-	//	ArrayList<Process> unAdded3= new ArrayList <Process>();
+
 		String choice="";
 		while (!choice.equals("4"))               // Main menu
 		{
@@ -120,19 +115,19 @@ public class Main {
 				
 				
 			for (int i=0;i<unAdded.size();i++)
-				{
+		    {
 					if(!policy.firstFit(unAdded.get(i)))
 					{
 						unAdded.add((processList.get(i)));
 					}
-				}
+			}
 			policy.print();
 			
 			
 			}
          	
          else
-         { //counter=partitions.size();
+         { 
         	 int sizee=unAdded.size();
  			for(int i=0;i<sizee;i++)
  			{
@@ -142,13 +137,9 @@ public class Main {
  			}
  			unAdded.clear();
 
-         		continue;}
-         	//counter=partitions.size();
-        // ArrayList<Partition>tempPartitions=new ArrayList<Partition>();
-         
-         //ArrayList<Partition>tempPartitions=(ArrayList<Partition>)processList.clone();
-       //  counter=partitions.size();
-            //processList.clear();
+         		continue;
+         }
+     
          	int sizee=unAdded.size();
 			for(int i=0;i<sizee;i++)
 			{
@@ -156,11 +147,12 @@ public class Main {
 				sizee--;
 				
 			}
+			
          	unAdded.clear();
          	partitions.clear();
          
          	
-         	//ArrayList<Partition>tempPartitions=(ArrayList<Partition>)partitions.clone();
+       
          	policy=null;
 			break;
 		
@@ -175,7 +167,7 @@ public class Main {
 				partitions.add(p);
 				
 			}
-    	  // partitions=new ArrayList<Partition>(temp);
+    	
     	   policy=new Policy(partitions);
  
    		
@@ -224,7 +216,7 @@ public class Main {
 				size--;
 				
 			}
-         	//counter=partitions.size();
+  
          	policy=null;
          	unAdded.clear();
          	partitions.clear();
@@ -282,7 +274,7 @@ public class Main {
       			continue;
         	}
         		
-        	//counter=partitions.size();
+       
         	
         	int sizeee=unAdded.size();
 			for(int i=0;i<sizeee;i++)
@@ -304,6 +296,6 @@ public class Main {
       
       
       }
-		}
-		}
 	}
+  }
+}
