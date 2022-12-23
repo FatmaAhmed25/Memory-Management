@@ -288,8 +288,11 @@ public class Main {
 
         	
 			break;
+			
     	   
-      
+         case"4":
+           System.out.println("You exit the program");
+           break;
       
       
       
